@@ -64,7 +64,7 @@ const ChatInput = ({onSend, disabled}: InputProps) => {
       <input 
         value={input}
         onChange={(ev: any) => setInput(ev.target.value)}
-        className="w-full py-2 text-gray-800 rounded-lg focus:outline-none"
+        className="w-full py-2 ml-3 text-gray-800 rounded-lg focus:outline-none"
         type="text"
         placeholder="Ask me anything"
         disabled={disabled}
