@@ -27,14 +27,14 @@ const ChatMessage = ({text, from, key}: MessageProps) => {
     <>
       {
         from == Creator.Me && (
-          <div key={key} className="bg-zinc-100 p-4 rounded-lg flex mt-4 items-center whitespace-pre-wrap">
+          <div key={key.toString()} className="bg-zinc-100 p-4 rounded-lg flex mt-4 items-center whitespace-pre-wrap">
             <p className="text-gray-700">{text}</p>
           </div>
         )
       }
       {
          from == Creator.Bot && (
-          <div key={key} className="bg-dax-400 p-4 rounded-lg flex mt-4 items-center whitespace-pre-wrap">
+          <div key={key.toString()} className="bg-dax-400 p-4 rounded-lg flex mt-4 items-center whitespace-pre-wrap">
             <Image src={daxBotPic} alt="User" width={40}/>
             <p className="text-gray-700 ml-3">{text}</p>
           </div>
@@ -101,7 +101,7 @@ export default function Home(){
     setLoading(true);
 
     const newMessage: MessageProps = {
-      key: new Date().getTime().toString(),
+      key: new Date().getTime(),
       from: Creator.Me,
       text: input
     };
